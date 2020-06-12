@@ -1,0 +1,12 @@
+endpoints:
+  env:
+    enabled: true
+spring:
+  data:
+    mongodb:
+      host: mongodb
+#  data:
+#    mongodb: uri:mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb/${MONGO_DATABASE}
+
+  application:
+    name: book-manager

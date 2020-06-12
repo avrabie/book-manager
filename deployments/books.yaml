@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-manager
+  labels:
+    app: book-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: book-manager
+  template:
+    metadata:
+      labels:
+        app: book-manager
+    spec:
+      containers:
+        - name: book-manager-container
+          image: moldovean/book-manager:0.0.1-SNAPSHOT
+          ports:
+            - containerPort: 8080
+#          env:
+#            - name: MONGO_DATABASE
+#              valueFrom:
+#                configMapKeyRef:
+#                  name: mongodb
+#                  key: database-name
+#            - name: MONGO_USERNAME
+#              valueFrom:
+#                secretKeyRef:
+#                  name: mongodb
+#                  key: database-user
+#            - name: MONGO_PASSWORD
+#              valueFrom:
+#                secretKeyRef:
+#                  name: mongodb
+#                  key: database-password

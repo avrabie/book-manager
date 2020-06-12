@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myapp-ingress
+spec:
+  rules:
+    - host: vrabie.net
+      http:
+        paths:
+          - backend:
+              serviceName: book-manager-service
+              servicePort: 8080
